@@ -1,0 +1,17 @@
+.hidden {
+  display: none;
+}
+
+.container {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.pizzaSize {
+  text-align: center;
+}
+
+.pizzaToppings {
+  text-align: center;
+}

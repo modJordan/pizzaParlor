@@ -5,7 +5,6 @@
 #### _{The application builds a pizza with toppings and displays the price}_
 
 ## Technologies Used
-
 * HTML
 * JavaScript
 * CSS
