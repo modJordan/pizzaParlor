@@ -29,3 +29,13 @@ _{A pizza parlor adventure! What did you have in mind? Pepperoni? Olives? Extra 
 _{If you run into any issues or have questions, ideas or concerns, please email me at mod.jordan@icloud.com.}_
 
 **License:** Apache License 2.0; July 16th, 2023
+
+# Tests
+
+Describe: selectSize()
+
+Test: "It will create an object with the selected size from the radio input."
+Code:
+let orderOne = selectSize()
+selectSize;
+Expected output:
