@@ -32,6 +32,12 @@ _{If you run into any issues or have questions, ideas or concerns, please email 
 
 # Tests
 
+Describe: Order()
+
+Test: "It should return a Order object with two properties for toppings and size"
+Code: const myOrder = new Order(["anchovies", "pineapple"], "medium");
+Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium" }
+
 Describe: selectSize()
 
 Test: "It will create an object with the selected size from the radio input."

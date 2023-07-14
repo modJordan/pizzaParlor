@@ -6,8 +6,8 @@ function Order(size, toppings) {
 }
 
 Order.prototype.selectSize = function (size) {
-  this.size = size;
-  console.log(size);
+  size = size
+  return size
 }
 
 
@@ -36,7 +36,7 @@ window.addEventListener("submit", function (e) {
   e.preventDefault();
   let sizeOutput = document.getElementById("radio-form");
   let toppingOutput = document.getElementById("checkbox-form");
-  const sizeSelector = document.querySelector("input[name=size]:checked").value;
+  const sizeSelector = document.querySelector("form#radio-form input[name=size]:checked").value;
   const toppingsSelected = document.querySelectorAll("form#checkbox-form input[name=toppings]:checked");
 
   const order = new Order(sizeSelector, toppingsSelected);
