@@ -27,30 +27,34 @@
       <br />
       <br />
     </form>
-    <div class="pizzaToppings" <form id="checkbox-form">
-      <input type="checkbox" id="pepperoni" name="toppings">
-      <label for="pepperoni">Pepperoni</label>
-      <br />
-      <input type="checkbox" id="cheese" name="toppings">
-      <label for="cheese">Cheese</label>
-      <br />
-      <input type="checkbox" id="sausage" name="toppings">
-      <label for="sausage">Sausage</label>
-      <br />
-      <input type="checkbox" id="ham" name="toppings">
-      <label for="ham">Ham</label>
-      <br />
-      <input type="checkbox" id="pineapple" name="toppings">
-      <label for="pineapple">Pineapple</label>
-      <br />
-      <br />
-      <br />
-      <button type="submit" id="submitOrder">Submit</button>
+    <div class="pizzaToppings">
+      <form id="checkbox-form">
+        <input type="checkbox" id="pepperoni" name="toppings">
+        <label for="pepperoni">Pepperoni</label>
+        <br />
+        <input type="checkbox" id="cheese" name="toppings">
+        <label for="cheese">Cheese</label>
+        <br />
+        <input type="checkbox" id="sausage" name="toppings">
+        <label for="sausage">Sausage</label>
+        <br />
+        <input type="checkbox" id="ham" name="toppings">
+        <label for="ham">Ham</label>
+        <br />
+        <input type="checkbox" id="pineapple" name="toppings">
+        <label for="pineapple">Pineapple</label>
+        <br />
+        <br />
+        <br />
+        <button type="submit" id="submitOrder">Submit</button>
       </form>
     </div>
 
 
     <div id="pizzaPrice" class="hidden">
+      <h1 class="output">For a <p id="sizeInfo"></p>
+        <p id="toppingInfo"></p>
+      </h1>
       <h2>Here's your final price:</h2>
       <p>Total <span class="total"></span></p>
 
