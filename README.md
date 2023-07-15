@@ -39,10 +39,16 @@ Code: let myOrder = new Order(["anchovies", "pineapple"], "medium");
 myOrder;
 Expected Output: Order { toppings: ["anchovies", "pineapple"], size: "medium" }
 
+Test: "The Order object should include a list of toppings"
+Code: 
+let orderToppings = new Order("small", ["Pepperoni", "Cheese", "Olives"]);
+orderToppings;
+Expect Output: Object { size: small, toppings: "Pepperoni", "Cheese", "Olives"}
+
 Describe: selectSize()
 
-Test: "It will create an object with the selected size from the radio input."
+Test: "It will create an object with a size"
 Code:
-let myOrderSize = myOrder.selectSize()
+let myOrderSize = new Order("small");
 myOrderSize;
 Expected output:
