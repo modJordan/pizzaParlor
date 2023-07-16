@@ -10,10 +10,12 @@ Order.prototype.selectSize = function (size) {
 }
 
 Order.prototype.toppingArray = function (topping) {
-  this.toppings = topping;
+  this.toppings = topping.value;
+
 }
 
 Order.prototype.addToppings = function (topping) {
+  this.toppings = topping.value;
   if (!Array.isArray(this.toppings)) {
     this.toppings = [];
   }
@@ -28,6 +30,7 @@ function handleFormSubmission(e) {
   const sizeSelector = document.querySelector("input[name=size]:checked").value;
   const toppingsSelected = Array.from(document.querySelectorAll("form#checkbox-form input[name=toppings]:checked")).map(input => input.value);
 
+
   const order = new Order(sizeSelector, toppingsSelected);
   order.selectSize(sizeSelector);
 
@@ -35,11 +38,11 @@ function handleFormSubmission(e) {
   const sizeOutput = document.getElementById("sizeInfo");
   const toppingOutput = document.getElementById("toppingInfo");
 
-  sizeOutput.textContent = order.size;
+  sizeOutput.textContent = `${order.size} pizza `;
   toppingOutput.textContent = order.toppings.join(", ")
 
   let outputBox = document.getElementById("pizzaPrice");
-  outputBox.removeAttribute("hidden");
+  outputBox.classList.remove("hidden");
 
   function calculatePrice(size, toppings) {
     let basePrice;
@@ -64,29 +67,35 @@ function handleFormSubmission(e) {
   totalSpan.textContent = totalPrice;
 }
 
+
+
 window.addEventListener("load", function () {
-  const form = document.querySelector("form#radio-form");
-  form.addEventListener("submit", handleFormSubmission);
+  const button = document.getElementById("addPizza");
+  button.addEventListener("click", handleFormSubmission);
+  const form = document.getElementById("radio-form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+  });
 });
 
-window.addEventListener("submit", function (e) {
-  e.preventDefault();
+// form.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  const sizeSelector = document.querySelector("form#radio-form input[name=size]:checked").value;
-  const toppingsSelected = document.querySelectorAll("form#checkbox-form input[name=toppings]:checked");
+//   const sizeSelector = document.querySelector("form#radio-form input[name=size]:checked").value;
+//   const toppingsSelected = Array.from(document.querySelectorAll("form#checkbox-form input[name=toppings]:checked"));
 
-  const order = new Order(sizeSelector, toppingsSelected);
-  order.selectSize(sizeSelector);
-  order.toppingArray(toppingsSelected);
+//   const order = new Order(sizeSelector, toppingsSelected);
+//   order.selectSize(sizeSelector);
+//   order.addToppings(toppingsSelected);
 
-  let sizeOutput = document.getElementById("sizeInfo");
-  let toppingOutput = document.getElementById("toppingInfo");
+//   let sizeOutput = document.getElementById("sizeInfo");
+//   let toppingOutput = document.getElementById("toppingInfo");
 
-  let output = document.getElementById("pizzaPrice");
-  output.removeAttribute("hidden");
+//   let output = document.getElementById("pizzaPrice");
+//   output.removeAttribute("hidden");
 
-  sizeOutput.textContent = order.size;
-  toppingOutput.textContent = order.toppings;
+//   sizeOutput.textContent = order.size;
+//   toppingOutput.textContent = order.toppings;
 
-});
+// });
 

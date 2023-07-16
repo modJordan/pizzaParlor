@@ -8,7 +8,6 @@
 * HTML
 * JavaScript
 * CSS
-* Bootstrap
 
 ## Description
 
