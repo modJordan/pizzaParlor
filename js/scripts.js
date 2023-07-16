@@ -10,7 +10,7 @@ Order.prototype.selectSize = function (size) {
 }
 
 Order.prototype.toppingArray = function (topping) {
-  this.toppings = topping
+  this.toppings = topping;
 }
 
 Order.prototype.addToppings = function (topping) {
@@ -59,9 +59,9 @@ function handleFormSubmission(e) {
     return totalPrice.toFixed(2);
   }
 
-  // let totalPrice = calculatePrice(order.size, order.toppings);
-  // let totalSpan = document.querySelector(".total");
-  // totalSpan.textContent = totalPrice;
+  let totalPrice = calculatePrice(order.size, order.toppings);
+  let totalSpan = document.querySelector(".total");
+  totalSpan.textContent = totalPrice;
 }
 
 window.addEventListener("load", function () {
