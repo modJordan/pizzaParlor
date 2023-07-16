@@ -51,4 +51,6 @@ Test: "It will create an object with a size"
 Code:
 let myOrderSize = new Order("small");
 myOrderSize;
-Expected output:
+Expected output: Object { size: "small"};
+
+

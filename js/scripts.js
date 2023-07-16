@@ -9,29 +9,42 @@ Order.prototype.selectSize = function (size) {
   this.size = size
 }
 
+Order.prototype.toppingArray = function () {
+  for (let i = 0; i < arguments.length; i++) {
+    this.toppings.push(arguments[i]);
+  }
+}
 
 Order.prototype.addToppings = function (topping) {
-  return this.toppings.push(topping);
+  if (!Array.isArray(this.toppings)) {
+    this.toppings = [];
+  }
+  this.toppings = this.toppings.concat(topping);
+  return this.toppings;
 }
+
 
 //UI Logic
 
 function handleFormSubmission(e) {
   e.preventDefault();
   const sizeSelector = document.querySelector("input[name=size]:checked").value;
-  const toppingsSelected = document.querySelector("form#checkbox-form input[name=toppings]:checked");
+  const toppingsSelected = Array.from(document.querySelector("form#checkbox-form input[name=toppings]:checked"));
+  console.log(toppingsSelected);
 
-  const order = new Order(sizeSelector, []);
+  const order = new Order(sizeSelector, toppingsSelected);
   order.selectSize(sizeSelector);
-  toppingsSelected.forEach(function (topping) {
-    order.addToppings(topping.value);
+  toppingArray = []
+  toppingsSelected.toString.forEach(function (topping) {
+    order.addToppings(topping);
+    push.toppingArray(topping)
   });
 
   const sizeOutput = document.getElementById("sizeInfo");
-  const toppingOutput = docuemnt.getElementById("toppingInfo");
+  const toppingOutput = document.getElementById("toppingInfo");
 
-  sizeOutput.textContent = order.size;
-  toppingOutput.textContent = order.toppings.join(", ");
+  sizeOutput.innerHTML = order.size;
+  toppingOutput.innerHTML = order.toppings.join(", ");
 }
 
 window.addEventListener("load", function () {
@@ -45,10 +58,10 @@ window.addEventListener("submit", function (e) {
   const sizeSelector = document.querySelector("form#radio-form input[name=size]:checked").value;
   const toppingsSelected = document.querySelectorAll("form#checkbox-form input[name=toppings]:checked");
 
-  const order = new Order(sizeSelector, []);
+  const order = new Order(sizeSelector, toppingsSelected);
   order.selectSize(sizeSelector);
   toppingsSelected.forEach(function (topping) {
-    order.addToppings(topping.value);
+    order.addToppings(topping);
   })
 
   let sizeOutput = document.getElementById("sizeInfo");
@@ -56,5 +69,8 @@ window.addEventListener("submit", function (e) {
 
   sizeOutput.innerHTML = order.size;
   toppingOutput.innerHTML = order.toppings.join(", ");
+  let outputBox = document.getElementById("pizzaPrice");
+
+  outputBox.removeAttribute("hidden");
 });
 
