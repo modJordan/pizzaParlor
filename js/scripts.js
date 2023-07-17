@@ -78,24 +78,3 @@ window.addEventListener("load", function () {
   });
 });
 
-// form.addEventListener("submit", function (e) {
-//   e.preventDefault();
-
-//   const sizeSelector = document.querySelector("form#radio-form input[name=size]:checked").value;
-//   const toppingsSelected = Array.from(document.querySelectorAll("form#checkbox-form input[name=toppings]:checked"));
-
-//   const order = new Order(sizeSelector, toppingsSelected);
-//   order.selectSize(sizeSelector);
-//   order.addToppings(toppingsSelected);
-
-//   let sizeOutput = document.getElementById("sizeInfo");
-//   let toppingOutput = document.getElementById("toppingInfo");
-
-//   let output = document.getElementById("pizzaPrice");
-//   output.removeAttribute("hidden");
-
-//   sizeOutput.textContent = order.size;
-//   toppingOutput.textContent = order.toppings;
-
-// });
-

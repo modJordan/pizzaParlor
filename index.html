@@ -4,58 +4,57 @@
 <head>
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/scripts.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Shrikhand&display=swap" rel="stylesheet">
   <title>Pizza Time! </title>
 </head>
 
 <body>
   <div class="container">
-    <h1>Welcome to mod.Pizza!</h1>
+
+    <h1 class="header"><img class="img" src="https://i.gifer.com/7cJ2.gif"> Welcome to mod.Pizza! <img class="img"
+        src="https://i.gifer.com/7cJ2.gif"></h1>
   </div>
   <div class="pizzaSize">
-    <form id="radio-form">
-      <label>
-        <input type="radio" value="large" name="size" checked>Large</label>
-      <br />
-      <label>
-        <input type="radio" value="medium" name="size" checked>Medium</label>
-      <br />
-      <label>
-        <input type="radio" value="small" name="size" checked>Small</label>
-      <br />
-      <br />
-      <br />
-    </form>
-    <div class="pizzaToppings">
-      <form id="checkbox-form">
-        <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
-        <label for="pepperoni">Pepperoni</label>
-        <br />
-        <input type="checkbox" id="cheese" name="toppings" value="cheese">
-        <label for="cheese">Cheese</label>
-        <br />
-        <input type="checkbox" id="sausage" name="toppings" value="sausage">
-        <label for="sausage">Sausage</label>
-        <br />
-        <input type="checkbox" id="ham" name="toppings" value="ham">
-        <label for="ham">Ham</label>
-        <br />
-        <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
-        <label for="pineapple">Pineapple</label>
-        <br />
-        <br />
-        <br />
-        <button type="button" id="addPizza">Add Pizza</button>
+    <div class="containerBackground">
+      <h2 class="header2">What size of pizza would you like?</h2>
+      <form id="radio-form" class="styleSizeButtons">
+        <label>
+          <input type="radio" value="large" name="size" checked>Large</label>
+        <label>
+          <input type="radio" value="medium" name="size" checked>Medium</label>
+        <label>
+          <input type="radio" value="small" name="size" checked>Small</label>
       </form>
+      <h2 class="header2">Select your toppings:</h2>
+      <div class="pizzaToppings">
+        <form id="checkbox-form">
+          <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
+          <label for="pepperoni">Pepperoni</label>
+
+          <input type="checkbox" id="cheese" name="toppings" value="cheese">
+          <label for="cheese">Cheese</label>
+
+          <input type="checkbox" id="sausage" name="toppings" value="sausage">
+          <label for="sausage">Sausage</label>
+
+          <input type="checkbox" id="ham" name="toppings" value="ham">
+          <label for="ham">Ham</label>
+
+          <input type="checkbox" id="pineapple" name="toppings" value="pineapple">
+          <label for="pineapple">Pineapple</label>
+          <br />
+
+          <button type="button" class="button" id="addPizza">Add Pizza</button>
+        </form>
+      </div>
     </div>
 
 
     <div id="pizzaPrice" class="hidden">
-      <h1 class="output">For a </h1>
-      <h1 id="sizeInfo"></h1>
-      <h1> with </h1>
-      <h1 id="toppingInfo">and </h1>
-      <h1>Here's your final price:</h1>
-      <h1>Total <span class="total"></span></h1>
+      <h2 class="header2">For a <span id="sizeInfo"></span> with <span id="toppingInfo" class="header2"> toppings</span>
+        <h2 class="header2">Your total is: $<span class="total"></span></h2>
     </div>
   </div>
   </div>
