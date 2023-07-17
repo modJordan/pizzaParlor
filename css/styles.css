@@ -1,5 +1,5 @@
 body {
-  background-image: url(/img/cheese.jpg);
+  background-image: url('/img/cheese.jpg');
   background-repeat: repeat-x;
   background-size: 75%;
   background-position: top;
