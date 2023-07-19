@@ -22,6 +22,25 @@ Order.prototype.addToppings = function (topping) {
   this.toppings.push(topping);
 }
 
+Order.prototype.calculatePrice = function (size, toppings) {
+  let basePrice;
+  if (size === "small") {
+    basePrice = 10;
+  } else if (size === "medium") {
+    basePrice = 12;
+  } else if (size === "large") {
+    basePrice = 14;
+  } else {
+    return 0;
+  }
+
+  const toppingPrice = 1.5;
+  const toppingsCount = toppings.length;
+  const totalPrice = basePrice + (toppingPrice * toppingsCount);
+  return totalPrice.toFixed(2);
+}
+
+
 
 //UI Logic
 
@@ -43,26 +62,7 @@ function handleFormSubmission(e) {
 
   let outputBox = document.getElementById("pizzaPrice");
   outputBox.classList.remove("hidden");
-
-  function calculatePrice(size, toppings) {
-    let basePrice;
-    if (size === "small") {
-      basePrice = 10;
-    } else if (size === "medium") {
-      basePrice = 12;
-    } else if (size === "large") {
-      basePrice = 14;
-    } else {
-      return 0;
-    }
-
-    const toppingPrice = 1.5;
-    const toppingsCount = toppings.length;
-    const totalPrice = basePrice + (toppingPrice * toppingsCount);
-    return totalPrice.toFixed(2);
-  }
-
-  let totalPrice = calculatePrice(order.size, order.toppings);
+  let totalPrice = order.calculatePrice(order.size, order.toppings);
   let totalSpan = document.querySelector(".total");
   totalSpan.textContent = totalPrice;
 }
