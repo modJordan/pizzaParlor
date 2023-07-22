@@ -56,3 +56,12 @@ Object { size: null, toppings: (3) ["Pepperoni", "Cheese", "Pineapple"] }
 Expected Output: Object { size: null, toppings: (3) ["Pepperoni", "Cheese", "Pineapple"] }
 
 
+Describe calculatePrice ()
+
+Test: "It should display a price according the the Order object values."
+Code:
+const order1 = new Order("small", []);
+console.log(order1.calculatePrice());
+Expected Output: 10.00
+
+```

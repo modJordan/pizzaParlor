@@ -13,20 +13,20 @@ Order.prototype.addToppings = function (topping) {
   this.toppings.push(topping);
 };
 
-Order.prototype.calculatePrice = function (size, toppings) {
+Order.prototype.calculatePrice = function () {
   let basePrice;
-  if (size === "small") {
+  if (this.size === "small") {
     basePrice = 10;
-  } else if (size === "medium") {
+  } else if (this.size === "medium") {
     basePrice = 12;
-  } else if (size === "large") {
+  } else if (this.size === "large") {
     basePrice = 14;
   } else {
     return 0;
   }
 
   const toppingPrice = 1.5;
-  const toppingsCount = toppings.length;
+  const toppingsCount = this.toppings.length;
   const totalPrice = basePrice + (toppingPrice * toppingsCount);
   return totalPrice.toFixed(2);
 };
