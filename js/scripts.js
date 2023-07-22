@@ -3,16 +3,7 @@
 function Order(size, toppings) {
   this.size = size;
   this.toppings = toppings;
-}
-
-Order.prototype.selectSize = function (size) {
-  this.size = size
-}
-
-Order.prototype.toppingArray = function (topping) {
-  this.toppings = topping.value;
-
-}
+};
 
 Order.prototype.addToppings = function (topping) {
   this.toppings = topping.value;
@@ -20,7 +11,7 @@ Order.prototype.addToppings = function (topping) {
     this.toppings = [];
   }
   this.toppings.push(topping);
-}
+};
 
 Order.prototype.calculatePrice = function (size, toppings) {
   let basePrice;
@@ -38,7 +29,7 @@ Order.prototype.calculatePrice = function (size, toppings) {
   const toppingsCount = toppings.length;
   const totalPrice = basePrice + (toppingPrice * toppingsCount);
   return totalPrice.toFixed(2);
-}
+};
 
 
 
@@ -51,8 +42,7 @@ function handleFormSubmission(e) {
 
 
   const order = new Order(sizeSelector, toppingsSelected);
-  order.selectSize(sizeSelector);
-
+  order.size;
 
   const sizeOutput = document.getElementById("sizeInfo");
   const toppingOutput = document.getElementById("toppingInfo");
@@ -65,7 +55,7 @@ function handleFormSubmission(e) {
   let totalPrice = order.calculatePrice(order.size, order.toppings);
   let totalSpan = document.querySelector(".total");
   totalSpan.textContent = totalPrice;
-}
+};
 
 
 

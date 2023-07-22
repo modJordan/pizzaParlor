@@ -2,7 +2,7 @@
 
 #### By _**Jordan Kennedy**_
 
-#### _{The application builds a pizza with toppings and displays the price}_
+#### _The application builds a pizza with toppings and displays the price_
 
 ## Technologies Used
 * HTML
@@ -11,13 +11,13 @@
 
 ## Description
 
-_{A pizza parlor adventure! What did you have in mind? Pepperoni? Olives? Extra cheese? ANCHOVIES? We have it all! Come join us for our lunch specials on Tuesdays from 11-3pm! }_
+_A pizza parlor adventure! What did you have in mind? Pepperoni? Olives? Extra cheese? ANCHOVIES? We have it all! Come join us for our lunch specials on Tuesdays from 11-3pm!_
 
 ## Setup/Installation Requirements
 
 * Clone or Fork project
 * Make sure all images and files are in the proper folders
-* deploy
+* Open the index.html file in your browser
 
 ## Known Bugs
 
@@ -31,7 +31,7 @@ _{If you run into any issues or have questions, ideas or concerns, please email 
 
 # Tests
 
-Describe: Order()
+```Describe: Order()
 
 Test: "It should return a Order object with two properties for toppings and size"
 Code: let myOrder = new Order(["anchovies", "pineapple"], "medium");
@@ -44,12 +44,15 @@ let orderToppings = new Order("small", ["Pepperoni", "Cheese", "Olives"]);
 orderToppings;
 Expect Output: Object { size: small, toppings: "Pepperoni", "Cheese", "Olives"}
 
-Describe: selectSize()
+Describe: addToppings()
 
-Test: "It will create an object with a size"
+Test:"It should add toppings to the Order Object."
 Code:
-let myOrderSize = new Order("small");
-myOrderSize;
-Expected output: Object { size: "small"};
+let myToppings = new Order( null, ["Pepperoni", "Cheese", "Pineapple"]);
+myToppings.addToppings; 
+myToppings;
+Object { size: null, toppings: (3) ["Pepperoni", "Cheese", "Pineapple"] }
+
+Expected Output: Object { size: null, toppings: (3) ["Pepperoni", "Cheese", "Pineapple"] }
 
 
